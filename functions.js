@@ -14,25 +14,18 @@ function extractCharacters(str) {
 function createLogger(prefix) {
     return function () {
         var args = Array.prototype.slice.call(arguments);
-        args.unshift(new Date().toISOString() + ' ' + prefix + ': ');
+        args.splice(0, 0, new Date().toISOString(), prefix,':');
         console.log.apply(console, args);
     };
 }
 
-var myLogger = createLogger('My Logger'),
-    myLogger2 = createLogger('My Logger');
-
+var myLogger = createLogger('My Logger');
 
 myLogger('some data');
-myLogger2('some data');
 
 myLogger({data: 1});
-myLogger2({data: 1});
 
 myLogger('My data is -', {data: 1});
-
-
-myLogger2('My data is -', {data: 1});
 
 function argumentsSum() {
     var sum = 0,
