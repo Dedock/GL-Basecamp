@@ -12,20 +12,19 @@ function extractCharacters(str) {
 
 
 function createLogger(prefix) {
-    return function () {
-        var args = Array.prototype.slice.call(arguments);
-        args.splice(0, 0, new Date().toISOString(), prefix,':');
-        console.log.apply(console, args);
-    };
+    var internalAction = 'var args = Array.prototype.slice.call(arguments);args.splice(0, 0, new Date().toISOString(), \'' + prefix + '\',\':\');console.log.apply(console, args);';
+    return new Function('', internalAction);
 }
 
 var myLogger = createLogger('My Logger');
 
 myLogger('some data');
+yourLogger('some data');
 
 myLogger({data: 1});
 
 myLogger('My data is -', {data: 1});
+
 
 function argumentsSum() {
     var sum = 0,
