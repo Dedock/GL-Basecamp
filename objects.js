@@ -33,17 +33,17 @@ var trackList = ['Snow', 'I\'m Electric', 'Back in Black', 'Undead', 'Californic
 function favoriteSong(collection) {
     var maxPlayed = collection[0].played,
         currentPlayed = 0,
-        ind = 0,
+        songIndex = 0,
         result;
     for (var j = 0; j < collection.length - 1; j++) {
         currentPlayed = compareObjects(collection[j], collection[j + 1], 'played');
         if (maxPlayed < currentPlayed) {
             maxPlayed = currentPlayed;
-            ind = j + 1;
+            songIndex = j + 1;
         }
     }
-    result = collection[ind];
-    result.index = ind;
+    result = collection[songIndex];
+    result.index = songIndex;
     return result;
 }
 
@@ -80,4 +80,4 @@ console.log(firstCalculator.getCurrentSum() + secondCalculator.getCurrentSum());
 
 console.log(firstCalculator.getCurrentSum(2) + secondCalculator.getCurrentSum(2));
 
-console.log(firstCalculator.getCurrentSum(3) + ' equal ' + firstCalculator.getCurrentSum());
+console.log(firstCalculator.getCurrentSum(3) + ' === ' + firstCalculator.getCurrentSum());
