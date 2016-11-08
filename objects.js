@@ -14,10 +14,12 @@ function Fruits(name, weight) {
     this.name = name;
     this.weight = weight;
 }
+
 var apple = {
     name: 'Macintosh',
     weight: 1
-}, peach = new Fruits('West peach', 0.5);
+};
+var peach = new Fruits('West peach', 0.5);
 
 compareObjects(apple, peach, 'weight');
 
@@ -81,3 +83,22 @@ console.log(firstCalculator.getCurrentSum() + secondCalculator.getCurrentSum());
 console.log(firstCalculator.getCurrentSum(2) + secondCalculator.getCurrentSum(2));
 
 console.log(firstCalculator.getCurrentSum(3) + ' === ' + firstCalculator.getCurrentSum());
+
+
+function deepCopy(original) {
+    var copy = Object.create(Object.getPrototypeOf(original)),
+        keys = Object.getOwnPropertyNames(original),
+        descriptor;
+
+    for (var i = 0; i < keys.length; i++) {
+        descriptor = Object.getOwnPropertyDescriptor(original, keys[i]);
+
+        if (descriptor.value && typeof descriptor.value === 'object') {
+            descriptor.value = deepCopy(descriptor.value);
+        }
+
+        Object.defineProperty(copy, keys[i], descriptor);
+    }
+
+    return copy;
+}
