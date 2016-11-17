@@ -16,7 +16,9 @@ function doAjaxCall1(url, method, onSuccess, onError) {
 
 }
 function doAjaxCall2(url, method, onSuccess, onError) {
-    fetch(url)
+    fetch(url, {
+        method: method
+    })
         .then(
             function (response) {
                 if (response.status === 200) {
@@ -24,9 +26,7 @@ function doAjaxCall2(url, method, onSuccess, onError) {
                 }
             }
         )
-        .catch(function (err) {
-            console.log('Fetch Error :-S', err);
-        });
+        .catch(onError());
 }
 /*
 
@@ -69,7 +69,7 @@ function doAjaxCall2(url, method, onSuccess, onError) {
  */
 
 
-function getBookById(id) {
+function getBookById1(id) {
     document.getElementById('book').textContent = 'Please wait. Book is loading';
 
     doAjaxCall('api/books/' + id, 'GET', function (response) {
@@ -79,13 +79,23 @@ function getBookById(id) {
     })
 }
 
+function getBookById2(id) {
+    document.getElementById('book').textContent = 'Please wait. Book is loading';
+    doAjaxCall2('api/books/' + id, 'GET', function (response) {
+        document.getElementById('book').textContent = response.name;
+    }, function () {
+        document.getElementById('book').textContent = 'Error. Please refresh your browser';
+    })
+}
+
+
 function loadPage(bookId) {
 
     document.getElementById('book').textContent = 'Please wait. Book is loading';
     document.getElementById('author').textContent = 'Please wait. Author details are loading';
     document.getElementById('similar').textContent = 'Please wait. Similar books are loading';
 
-    doAjaxCall('api/books/' + id, 'GET', function (response) {
+    doAjaxCall2('api/books/' + id, 'GET', function (response) {
         document.getElementById('book').textContent = response.name;
         doAjaxCall('api/autors' + response.authorId, 'GET', function (response) {
             document.getElementById('author').textContent = response.name;
