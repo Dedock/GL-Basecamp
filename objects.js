@@ -85,7 +85,12 @@ console.log(firstCalculator.getCurrentSum(2) + secondCalculator.getCurrentSum(2)
 console.log(firstCalculator.getCurrentSum(3) + ' === ' + firstCalculator.getCurrentSum());
 
 
+<<<<<<< Updated upstream:objects.js
 function deepClone(original) {
+=======
+
+function deepCopy(original) {
+>>>>>>> Stashed changes:Objects.js
     var copy = Object.create(Object.getPrototypeOf(original)),
         keys = Object.getOwnPropertyNames(original),
         descriptor;
