@@ -78,15 +78,6 @@ function getBookById1(id) {
     })
 }
 
-function getBookById2(id) {
-    document.getElementById('book').textContent = 'Please wait. Book is loading';
-    doAjaxCall2('api/books/' + id, 'GET', function (response) {
-        document.getElementById('book').textContent = response.name;
-    }, function () {
-        document.getElementById('book').textContent = 'Error. Please refresh your browser';
-    })
-}
-
 
 function loadPage(bookId) {
 
