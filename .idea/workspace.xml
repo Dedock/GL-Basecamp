@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="902d3980-a9e5-4e6d-bc30-d173e80daddf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DOM.js" afterPath="$PROJECT_DIR$/DOM.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hometask 6.js" afterPath="$PROJECT_DIR$/hometask 6.js" />
     </list>
     <ignored path="GL-Basecamp.iws" />
@@ -30,7 +28,7 @@
       <file leaf-file-name="DOM.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DOM.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
+            <state relative-caret-position="614">
               <caret line="307" column="34" selection-start-line="307" selection-start-column="34" selection-end-line="307" selection-end-column="34" />
               <folding>
                 <element signature="n#!!block;n#pyatnashki#0" expanded="false" />
@@ -43,8 +41,8 @@
       <file leaf-file-name="hometask 6.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hometask 6.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-559">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="-1477">
+              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -236,12 +234,12 @@
       <workItem from="1479460224106" duration="7269000" />
       <workItem from="1479564864316" duration="14741000" />
       <workItem from="1479635813072" duration="8810000" />
-      <workItem from="1479674314283" duration="5549000" />
+      <workItem from="1479674314283" duration="6498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42301000" />
+    <option name="totallyTimeSpent" value="43250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1262" height="880" extended-state="0" />
@@ -400,17 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DOM.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="307" column="34" selection-start-line="307" selection-start-column="34" selection-end-line="307" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!block;n#pyatnashki#0" expanded="false" />
-            <element signature="n#!!block;n#swapElements#0;n#!!block;n#pyatnashki#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bizzare.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -419,10 +406,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="307" column="34" selection-start-line="307" selection-start-column="34" selection-end-line="307" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!block;n#pyatnashki#0" expanded="false" />
+            <element signature="n#!!block;n#swapElements#0;n#!!block;n#pyatnashki#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hometask 6.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-559">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="-1477">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
           <folding />
         </state>
       </provider>

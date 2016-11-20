@@ -19,10 +19,13 @@ function doAjaxCall2(url, method) {
     return fetch(url, {
         method: method
     })
-        .then(
-            function (response) {
-                if (response.status === 200) {
-                    return response
+        .then(function checkStatus(response) {
+                if (response.status >= 200 && response.status < 300) {
+                    return response;
+                } else {
+                    var error = new Error(response.statusText);
+                    error.response = response;
+                    throw error;
                 }
             }
         )
@@ -85,15 +88,15 @@ function loadPage(bookId) {
     document.getElementById('author').textContent = 'Please wait. Author details are loading';
     document.getElementById('similar').textContent = 'Please wait. Similar books are loading';
 
-    doAjaxCall2('api/books/' + id, 'GET', function (response) {
+    doAjaxCall('api/books/' + id, 'GET', function (response) {
         document.getElementById('book').textContent = response.name;
-        doAjaxCall2('api/autors' + response.authorId, 'GET', function (response) {
+        doAjaxCall('api/autors' + response.authorId, 'GET', function (response) {
             document.getElementById('author').textContent = response.name;
             var similarBooksLoaded = 0;
             var similarBooksAmount = response.books.lenght;
 
             response.books.forEach(function (similarBookId) {
-                doAjaxCall2('api/bestsellers/similar/' + similarBookId, 'GET', function (response) {
+                doAjaxCall('api/bestsellers/similar/' + similarBookId, 'GET', function (response) {
                     var p = document.getElementById('similar').appendChild('p').textContent = response;
                     similarBooksLoaded += 1;
 
@@ -119,20 +122,20 @@ function loadPage2(bookId) {
     document.getElementById('author').textContent = 'Please wait. Author details are loading';
     document.getElementById('similar').textContent = 'Please wait. Similar books are loading';
 
-    fetch('api/books/' + bookId)
+    doAjaxCall2('api/books/' + bookId, 'GET')
         .then(function getBookByAuthor(response) {
             document.getElementById('book').textContent = response.name;
-            return fetch(('api/autors' + response.authorId));
-        },function () {
+            return doAjaxCall2('api/autors' + response.authorId, 'GET');
+        }, function () {
             document.getElementById('book').textContent = 'Error. Please refresh your browser';
         })
         .then(function getSimilarBooks(response) {
             document.getElementById('author').textContent = response.name;
 
             return Promise.all(response.books.map(function (similarBookId) {
-                fetch('api/bestsellers/similar/' + similarBookId);
+                doAjaxCall2('api/bestsellers/similar/' + similarBookId, 'GET');
             }))
-        },function () {
+        }, function () {
             document.getElementById('author').textContent = 'Error. Please refresh your browser';
         })
         .then(function showBooks(response) {
