@@ -1,10 +1,12 @@
 function extractCharacters(str) {
     var result = str.toLowerCase().split('');
     for (var i = 0; i < result.length; i++) {
-        for (var j = i + 1; j < result.length;) {
-            if (result[i] === result[j]) {
-                result.splice(j, 1);
-            } else j++;
+        var idx = result.indexOf(result[i]);
+        while (idx !== -1) {
+            idx = result.indexOf(result[i],idx + 1);
+            if(idx !== -1){
+                result.splice(idx, 1);
+            }
         }
     }
     console.log(result);
@@ -16,10 +18,18 @@ function createLogger(prefix) {
     return new Function('', internalAction);
 }
 
-var myLogger = createLogger('My Logger');
+function createLogger2(prefix) {
+    var x = function () {
+        var args = Array.prototype.slice.call(arguments);
+        args.splice(0, 0, new Date().toISOString(), prefix, ':');
+        console.log.apply(console, args);
+    };
+    return x;
+}
+
+var myLogger = createLogger2('My Logger');
 
 myLogger('some data');
-yourLogger('some data');
 
 myLogger({data: 1});
 
