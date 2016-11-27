@@ -1,0 +1,362 @@
+@font-face {
+  font-family: StarWars;
+  src: url(../fonts/DeathStar.otf);
+}
+
+body {
+  background: url(../../photo/ItmVuT6.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    border: 5px solid rgba(170, 170, 170, 0.25);
+    border-radius: 20px;
+
+    .heading {
+      font-family: StarWars;
+      font-size: 30px;
+      color: white;
+      margin-top: -18px;
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+      padding: 0 20px;
+      background: black;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: black;
+    }
+
+    .columnWrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      position: relative;
+      margin: 10px 10px 20px 10px;
+      border: 0;
+      border-radius: 6px;
+      background-color: #282727;
+      background-image: url(../../photo/bg_hash_top-052a93931374.png);
+      background-size: 7px;
+      background-repeat: repeat-x;
+      background-position: bottom left;
+      overflow: hidden;
+
+      .characterPhoto {
+        text-align: center;
+        img {
+          border-top-left-radius: 6px;
+          width: 100%;
+        }
+        .buttonWrapper {
+          display: inline-block;
+          width: 48%;
+          position: relative;
+          overflow: hidden;
+          button {
+            border: 0;
+            border-radius: 3px;
+            background-color: #9e4f60;
+            opacity: 0.5;
+            color: #aaa;
+            outline: none;
+            width: 100%;
+            height: 42px;
+            font: 300 16px/44.8px DIN, Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            background-image: url(../../photo/bg_hash_top-052a93931374.png);
+            background-size: 7px;
+            background-repeat: repeat-x;
+            background-position: bottom left;
+          }
+
+          .decalNext {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 47px;
+            height: 47px;
+            opacity: 0.06;
+            z-index: 1;
+            background-image: url(../../photo/decal-6dd1054957a3.png);
+            background-size: 300% 200%;
+            background-position: -200% 0;
+            right: 10px;
+            bottom: 19px;
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+          }
+          .decalPrev {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 47px;
+            height: 47px;
+            opacity: 0.06;
+            z-index: 1;
+            background-image: url(../../photo/decal-6dd1054957a3.png);
+            background-size: 300% 200%;
+            background-position: 0 0;
+            right: 135px;
+            bottom: -25px;
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+          }
+        }
+
+      }
+      .characterInfo {
+        border-left: 2px solid #9e4f60;
+      }
+      .column {
+        width: 33%;
+        min-width: 300px;
+        height: 350px;
+        font-family: DIN, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        color: #aaa;
+        position: relative;
+
+        .loadingGif {
+          position: absolute;
+          top: 30%;
+          left: 30%;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+        .listInfo {
+          list-style: none;
+          padding: 20px 0 20px 30px;
+        }
+        .listFilms {
+          list-style: none;
+          padding: 20px 20px 20px 0;
+        }
+      }
+      .decal {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        opacity: 0.06;
+        z-index: 1;
+        background: url(../../photo/decal-6dd1054957a3.png) 0 0 no-repeat;
+        background-size: 100% 100%;
+        right: -100px;
+        bottom: 220px;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: StarWars;
+  src: url(../fonts/DeathStar.otf);
+}
+
+body {
+  background: url(../../photo/ItmVuT6.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    border: 5px solid rgba(170, 170, 170, 0.25);
+    border-radius: 20px;
+
+    .heading {
+      font-family: StarWars;
+      font-size: 30px;
+      color: white;
+      margin-top: -18px;
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+      padding: 0 20px;
+      background: black;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: black;
+    }
+
+    .columnWrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      position: relative;
+      margin: 10px 10px 20px 10px;
+      border: 0;
+      border-radius: 6px;
+      background-color: #282727;
+      background-image: url(../../photo/bg_hash_top-052a93931374.png);
+      background-size: 7px;
+      background-repeat: repeat-x;
+      background-position: bottom left;
+      overflow: hidden;
+
+      .characterPhoto {
+        text-align: center;
+        img {
+          border-top-left-radius: 6px;
+          width: 100%;
+        }
+        .buttonWrapper {
+          display: inline-block;
+          width: 48%;
+          position: relative;
+          overflow: hidden;
+          button {
+            border: 0;
+            border-radius: 3px;
+            background-color: #9e4f60;
+            opacity: 0.5;
+            color: #fffaf6;
+            outline: none;
+            width: 100%;
+            height: 42px;
+            cursor: pointer;
+            font: 300 20px/44.8px 'Muli', sans-serif;
+            text-transform: uppercase;
+            background-image: url(../../photo/bg_hash_top-052a93931374.png);
+            background-size: 7px;
+            background-repeat: repeat-x;
+            background-position: bottom left;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+
+          .decalNext {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 47px;
+            height: 47px;
+            opacity: 0.06;
+            z-index: 1;
+            background-image: url(../../photo/decal-6dd1054957a3.png);
+            background-size: 300% 200%;
+            background-position: -200% 0;
+            right: 10px;
+            bottom: 19px;
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+          }
+          .decalPrev {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 47px;
+            height: 47px;
+            opacity: 0.06;
+            z-index: 1;
+            background-image: url(../../photo/decal-6dd1054957a3.png);
+            background-size: 300% 200%;
+            background-position: 0 0;
+            right: 135px;
+            bottom: -25px;
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+          }
+        }
+
+      }
+      .characterInfo {
+        border-left: 2px solid #9e4f60;
+      }
+      .column {
+        width: 33%;
+        min-width: 300px;
+        height: 350px;
+        font-family: DIN, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        color: #aaa;
+        position: relative;
+
+        .loadingGif {
+          position: absolute;
+          top: 30%;
+          left: 30%;
+        }
+        ul {
+          margin: 0;
+          padding: 0;
+        }
+        .listInfo {
+          list-style: none;
+          padding: 20px 0 20px 30px;
+        }
+        .listFilms {
+          list-style: none;
+          padding: 20px 20px 20px 0;
+        }
+      }
+      .decal {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        opacity: 0.06;
+        z-index: 1;
+        background: url(../../photo/decal-6dd1054957a3.png) 0 0 no-repeat;
+        background-size: 100% 100%;
+        right: -100px;
+        bottom: 220px;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+  }
+}

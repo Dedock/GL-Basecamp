@@ -18,18 +18,19 @@ function createLogger(prefix) {
     return new Function('', internalAction);
 }
 
-function createLogger2(prefix) {
-    var x = function () {
+function createLogger(prefix) {
+  return function () {
         var args = Array.prototype.slice.call(arguments);
         args.splice(0, 0, new Date().toISOString(), prefix, ':');
-        console.log.apply(console, args);
-    };
-    return x;
+        console.log.apply(this, args);
+    }.bind(console);
 }
 
-var myLogger = createLogger2('My Logger');
+var myLogger = createLogger('My Logger');
+var YorLogger = createLogger('My Logger');
 
 myLogger('some data');
+YorLogger('some data');
 
 myLogger({data: 1});
 
