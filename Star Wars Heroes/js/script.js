@@ -68,7 +68,7 @@ function doAjaxCall(url) {
  * @returns {Promise.<*>} array of promise with parsed promise.value
  */
 function fillCharacterInfo(data) {
-    removeAllNodeChildren('.listInfo');
+    removeElementAndCreateSame('.listInfo');
     var list = document.querySelector('.listInfo');
 
     var list2 = document.createElement('div');
@@ -76,7 +76,6 @@ function fillCharacterInfo(data) {
 
     var character = new Character(data);
 
-    list.setAttribute('name',character.name);
 
     list2.appendChild(item.cloneNode(false)).innerHTML = 'Name: ' + character.name;
     list2.appendChild(item.cloneNode(false)).innerHTML = 'Height: ' + character.height;
@@ -106,7 +105,7 @@ function fillFilms(data) {
         return new Film(film);
     });
     var list = document.createElement('div');
-    removeAllNodeChildren('.listFilms');
+    removeElementAndCreateSame('.listFilms');
 
     films.sort(function (a, b) {
         return a.episode_id - b.episode_id;
@@ -156,17 +155,23 @@ function Film(film) {
  * clear content of DOM element
  * @param {String} selector
  */
-function removeAllNodeChildren(selector) {
-    while (document.body.querySelector(selector).hasChildNodes()) {
-        document.body.querySelector(selector).removeChild(document.body.querySelector(selector).lastChild);
+function removeElementAndCreateSame(selector) {
+    var parent = document.body.querySelector(selector).parentNode;
+    var nodeName = document.body.querySelector(selector).nodeName;
+    var classList = document.body.querySelector(selector).className.split(' ');
+    parent.removeChild(document.body.querySelector(selector));
+    var element = document.createElement(nodeName);
+    for (var i = 0; i < classList.length; i++) {
+        element.classList.add(classList[i])
     }
+    parent.appendChild(element);
 }
 /**
  * error handler
  */
 function characterDoesntExist() {
-    removeAllNodeChildren('.listInfo');
-    removeAllNodeChildren('.listFilms');
+    removeElementAndCreateSame('.listInfo');
+    removeElementAndCreateSame('.listFilms');
     document.body.querySelector('.listInfo').innerHTML = 'Sorry, character doesn\'t exist';
 }
 /**
@@ -176,6 +181,7 @@ function characterDoesntExist() {
  * @returns {{type: type}}
  */
 function setupTypewriter(where, what) {
+    if (!where) return;
     where.innerHTML = "";
 
     var cursorPosition = 0,
